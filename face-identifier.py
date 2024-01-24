@@ -1,6 +1,6 @@
 # Name: Liam Nutley
 # Email: liam.nutley@yahoo.ie
-# Problem 1
+# Face Identifier
 
 # Importing all required packages
 import cv2
@@ -18,8 +18,8 @@ def adjusted_detect_face(img):
 	face_img = img.copy()
 	
 	face_rect = face_cascade.detectMultiScale(face_img,
-											scaleFactor = 1.2,
-											minNeighbors = 5)
+	scaleFactor = 1.2,
+	minNeighbors = 5)
 	
 	for (x, y, w, h) in face_rect:
 		cv2.rectangle(face_img, (x, y),
@@ -33,8 +33,9 @@ def detect_eyes(img):
 	
 	eye_img = img.copy()
 	eye_rect = eye_cascade.detectMultiScale(eye_img,
-											scaleFactor = 1.2,
-											minNeighbors = 5)
+	scaleFactor = 1.2,
+	minNeighbors = 5)
+	
 	for (x, y, w, h) in eye_rect:
 		cv2.rectangle(eye_img, (x, y),
 					(x + w, y + h), (255, 255, 255), 10)	
